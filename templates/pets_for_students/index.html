@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title lang="en">
+            Pets For Students
+        </title>
+    </head>
+    <body>
+        <div>
+            <img src="{% static 'images/cat.png' %}" alt="Picture of Bingus" id="holy-bingus" />
+        </div>
+        <div>
+            <h1>The Students and their cats are:</h1>
+            {% for student in student_list %}
+                <p>{{student}} has <strong>{{student.noCats}}</strong> cat{% if student.noCats != 1 %}s{% endif %}.</p>
+                <ul>
+                {% for cat in cat_list %}
+                    {% if cat.ownerId.id == student.id %}
+                        <li>{{ cat }}</li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+        <div>
+            <p><a href="{% url 'pets_for_students:pets' %}">About Pets of Students</a></p>
+        </div>
+    </body>
+</html>
+
+<style>
+ #holy-bingus {
+    width: 300px;
+ }
+</style>
