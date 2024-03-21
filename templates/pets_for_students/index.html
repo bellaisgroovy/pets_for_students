@@ -8,10 +8,10 @@
         </title>
     </head>
     <body>
-        <div>
+        <div class="header">
             <img src="{% static 'images/cat.png' %}" alt="Picture of Bingus" id="holy-bingus" />
         </div>
-        <div>
+        <div class="main">
             <h1>The Students and their cats are:</h1>
             {% for student in student_list %}
                 <p>{{student}} has <strong>{{student.noCats}}</strong> cat{% if student.noCats != 1 %}s{% endif %}.</p>
@@ -24,14 +24,41 @@
                 </ul>
             {% endfor %}
         </div>
-        <div>
+        <div class="links">
             <p><a href="{% url 'pets_for_students:pets' %}">About Pets of Students</a></p>
         </div>
     </body>
 </html>
 
 <style>
- #holy-bingus {
-    width: 300px;
- }
+    div {
+        margin: auto;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width:50%;
+        background-color: lightcyan;
+        border-radius: 150px;
+        border: 10px solid gold;
+    }
+
+    body {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-image: url({% static 'images/heaven.jpg' %});
+        background-color: blue;
+        color: navy;
+        text-align: center; 
+    }
+
+    a {
+        color: red;
+    }
+
+    #holy-bingus {
+        width: 300px;
+        margin: auto;
+        display: block;
+        border: 10px solid gold;
+        border-radius: 150px;
+    }
 </style>

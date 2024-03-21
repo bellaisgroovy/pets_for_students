@@ -9,7 +9,7 @@
     </head>
     <body>
         <div>
-            <img src="{% static 'images/cats_with_fire.jpg' %}" alt="Picture of Bingus"/>
+            <img src="{% static 'images/cats_with_fire.jpg' %}" alt="Picture of cats with fire" id="cat-img"/>
         </div>
         <div>
             <h1>All the cats are:</h1>
@@ -24,3 +24,36 @@
         </div>
     </body>
 </html>
+
+<style>
+    div {
+        margin: auto;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width:50%;
+        background-color: lightcyan;
+        border-radius: 150px;
+        border: 10px solid gold;
+    }
+
+    body {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-image: url({% static 'images/heaven.jpg' %});
+        background-color: blue;
+        color: navy;
+        text-align: center; 
+    }
+    
+    a {
+        color: red;
+    }
+
+    #cat-img {
+        width: 300px;
+        margin: auto;
+        display: block;
+        border: 10px solid gold;
+        border-radius: 150px;
+    }
+</style>
