@@ -19,12 +19,12 @@ class Cat(models.Model):
     ownerId = models.ForeignKey(Student, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)  # Call the "real" save() method.
-        self.ownerId.updateNoCats()  # Update the noCats attribute of the related Student instance.
+        super().save(*args, **kwargs)
+        self.ownerId.updateNoCats()
 
     def delete(self, *args, **kwargs):
-        super().delete(*args, **kwargs)  # Call the "real" save() method.
-        self.ownerId.updateNoCats()  # Update the noCats attribute of the related Student instance.
+        super().delete(*args, **kwargs)
+        self.ownerId.updateNoCats()
 
     def __str__(self):
         return self.name
